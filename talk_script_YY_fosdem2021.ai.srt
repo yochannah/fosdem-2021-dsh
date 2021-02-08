@@ -1,0 +1,1000 @@
+1
+00:00:00,780 --> 00:00:05,310
+Hi, my name is Yo Yehudi. I'm
+the open source technology lead
+
+2
+00:00:05,310 --> 00:00:08,700
+for the data science and health
+team at the Wellcome Trust. And
+
+3
+00:00:08,700 --> 00:00:11,190
+I'm here today to talk a little
+bit about what my team does to
+
+4
+00:00:11,190 --> 00:00:14,310
+actually fund foundational
+tools, trust and talent for open
+
+5
+00:00:14,310 --> 00:00:18,030
+research in life science. And I
+also have my twitter and
+
+6
+00:00:18,030 --> 00:00:21,390
+fediverse handles here. So if
+you want to tweet or toot about
+
+7
+00:00:21,390 --> 00:00:25,710
+the talk, then you can do so.
+And also some contact details at
+
+8
+00:00:25,710 --> 00:00:29,190
+the end of the slides as well,
+including my email address. So
+
+9
+00:00:29,460 --> 00:00:31,590
+I'm going to start by setting a
+scene.
+
+10
+00:00:32,640 --> 00:00:38,220
+First of all, let's talk about
+Sam. So Sam is the scientist who
+
+11
+00:00:38,220 --> 00:00:41,250
+does science in the lab, wearing
+a lab coat and perhaps doing
+
+12
+00:00:41,250 --> 00:00:44,160
+interesting things with
+pippettes or microscopes. This
+
+13
+00:00:44,160 --> 00:00:47,160
+is possibly what the traditional
+images that pops into people's
+
+14
+00:00:47,160 --> 00:00:50,280
+head when they think about the
+word scientist, but it's really
+
+15
+00:00:50,280 --> 00:00:51,450
+only half the picture.
+
+16
+00:00:53,010 --> 00:00:56,610
+So this case, I will actually
+also be talking about Joy. And
+
+17
+00:00:56,880 --> 00:01:00,480
+primarily, I'll be talking about
+Joy. They work in the same area,
+
+18
+00:01:00,480 --> 00:01:03,660
+Sam, but they focus more on
+computational research. And they
+
+19
+00:01:03,660 --> 00:01:07,800
+tend to write their code, do
+their work, to tidy data, maybe
+
+20
+00:01:07,800 --> 00:01:11,310
+to analyse or visualise their
+results. And it might even be
+
+21
+00:01:11,310 --> 00:01:14,130
+that they couldn't do their work
+at all without code, because
+
+22
+00:01:14,130 --> 00:01:17,430
+maybe they have gigabytes and
+gigabytes worth of image data or
+
+23
+00:01:17,430 --> 00:01:21,060
+some other type of big data that
+really does need to be analysed
+
+24
+00:01:21,060 --> 00:01:22,170
+using computation.
+
+25
+00:01:23,350 --> 00:01:26,410
+Sometimes these types of data,
+there's no way a single human or
+
+26
+00:01:26,410 --> 00:01:29,770
+even a team could properly
+analyse it. And so we do have a
+
+27
+00:01:29,770 --> 00:01:32,440
+lot of computers in research.
+And I suspect that since I'm
+
+28
+00:01:32,440 --> 00:01:35,710
+speaking to the open research
+room at fosdem, many of you may
+
+29
+00:01:35,710 --> 00:01:38,530
+already be computational
+researchers and be familiar with
+
+30
+00:01:38,530 --> 00:01:40,660
+this. But I think it's important
+to set that baseline for
+
+31
+00:01:40,660 --> 00:01:43,870
+everyone else since this isn't
+only an academic conference.
+
+32
+00:01:45,610 --> 00:01:48,280
+Anyway, code is a non
+traditional research and
+
+33
+00:01:48,280 --> 00:01:51,220
+academic output, which means
+that it doesn't really fit into
+
+34
+00:01:51,220 --> 00:01:53,890
+the same incentive systems that
+may already exist within
+
+35
+00:01:53,890 --> 00:01:58,810
+research. So actually, all of it
+both Sam and Joy's work is still
+
+36
+00:01:58,810 --> 00:02:02,020
+really important, and it's
+around a stain definitely.
+
+37
+00:02:02,320 --> 00:02:05,740
+Today, we'll focus on joy. And
+if you identify with Joy, then
+
+38
+00:02:05,740 --> 00:02:09,070
+hopefully this is a talk for
+you. So I'll dig a little bit
+
+39
+00:02:09,070 --> 00:02:14,110
+into the title of my talk, which
+was talking about the tools, the
+
+40
+00:02:14,110 --> 00:02:18,400
+talent and the incentive. So
+what my some of the challenges
+
+41
+00:02:18,400 --> 00:02:21,880
+that actually people have today
+is that we have missing
+
+42
+00:02:21,880 --> 00:02:25,600
+computational tools. For the
+research, should we have
+
+43
+00:02:25,600 --> 00:02:29,470
+insufficient incentive to draw,
+retain and reward talent, and
+
+44
+00:02:29,470 --> 00:02:31,990
+insufficient trust in
+computational work.
+
+45
+00:02:33,730 --> 00:02:36,760
+Right. So first of all, looking
+at tools, there's a couple of
+
+46
+00:02:36,760 --> 00:02:39,250
+interesting and perhaps almost
+opposite cases here that may
+
+47
+00:02:39,250 --> 00:02:42,820
+occur. On the one hand, research
+by its nature is often cutting
+
+48
+00:02:42,820 --> 00:02:45,670
+edge, or it's just such a very
+narrow domain that actually the
+
+49
+00:02:45,670 --> 00:02:49,240
+software tools don't yet exist
+for people need to do. On the
+
+50
+00:02:49,240 --> 00:02:51,790
+other hand, in some domains,
+there's the opposite problem,
+
+51
+00:02:51,790 --> 00:02:54,520
+where actually the tools are
+fragmented. And so there might
+
+52
+00:02:54,520 --> 00:02:56,800
+be lots and lots of different
+standards and lots and lots of
+
+53
+00:02:56,800 --> 00:02:59,440
+different ways to do something.
+Of course, here I have the
+
+54
+00:02:59,440 --> 00:03:02,650
+obligatory XKCD, talking about
+how easy it is to actually
+
+55
+00:03:02,650 --> 00:03:06,610
+result in fragmented standards.
+Anyway, these are two challenges
+
+56
+00:03:06,610 --> 00:03:10,120
+with regarding to tools I'm sure
+there are many, many more. So
+
+57
+00:03:10,120 --> 00:03:14,650
+I'll also try and talk about
+trust. So unfortunately, I think
+
+58
+00:03:14,650 --> 00:03:17,200
+a lot of us are familiar with
+different ways that tech has
+
+59
+00:03:17,200 --> 00:03:20,470
+gained a bad name, and has
+gained in many cases a bad name
+
+60
+00:03:20,470 --> 00:03:24,190
+for a good reason. For example,
+anonymized data is very often
+
+61
+00:03:24,400 --> 00:03:26,830
+re-identifiable. It's not that
+long ago, we heard about the
+
+62
+00:03:26,830 --> 00:03:30,400
+huge Cambridge Analytica
+Facebook data scandal. And
+
+63
+00:03:30,400 --> 00:03:33,220
+perhaps most recently, people
+have been flocking away from
+
+64
+00:03:33,220 --> 00:03:36,670
+WhatsApp due to privacy
+concerns. I think the problem
+
+65
+00:03:36,670 --> 00:03:39,610
+around trust is that like I
+mentioned earlier, computational
+
+66
+00:03:39,610 --> 00:03:42,130
+research for managing people's
+data is really, really
+
+67
+00:03:42,130 --> 00:03:46,030
+essential. There's so many
+scenarios where we can't do it
+
+68
+00:03:46,030 --> 00:03:48,580
+any way except computationally
+do the work that we need to do,
+
+69
+00:03:48,580 --> 00:03:51,580
+because there's too much data or
+it's too is too complex for us
+
+70
+00:03:51,580 --> 00:03:54,670
+to do it any other way. But at
+the same time, if we haven't
+
+71
+00:03:54,670 --> 00:03:58,120
+acted in trustworthy ways, and
+we haven't actually proven that
+
+72
+00:03:58,120 --> 00:04:01,240
+we deserve the trust of people,
+then that people are going to be
+
+73
+00:04:01,240 --> 00:04:04,840
+understandably wary of sharing
+data and of working with
+
+74
+00:04:04,840 --> 00:04:08,230
+computational tools, which means
+it can be really hard to make
+
+75
+00:04:08,230 --> 00:04:11,050
+the necessary advances that we
+actually want to help people
+
+76
+00:04:11,050 --> 00:04:12,580
+when we do have good intent.
+
+77
+00:04:14,070 --> 00:04:18,060
+And so I'll talk a little bit
+more perhaps about talent as
+
+78
+00:04:18,060 --> 00:04:22,950
+well. So to set the scene or
+perhaps elaborate a little bit
+
+79
+00:04:22,950 --> 00:04:27,960
+on how research and academia
+works. So if you remember, Sam,
+
+80
+00:04:28,080 --> 00:04:31,080
+the traditional researcher, when
+they finish up their lab work,
+
+81
+00:04:31,080 --> 00:04:33,690
+they'll write up what their
+results are. And they'll publish
+
+82
+00:04:33,690 --> 00:04:37,410
+this paper that they've written
+in a journal. And so since this
+
+83
+00:04:37,410 --> 00:04:40,680
+is this is how things evolved.
+The academic credit model
+
+84
+00:04:40,680 --> 00:04:43,710
+typically revolves around how
+many papers you've written, and
+
+85
+00:04:43,710 --> 00:04:47,100
+what's in those papers. But Joy
+does certainly write papers,
+
+86
+00:04:47,100 --> 00:04:49,740
+Joy's the computational
+researcher, so they spend time
+
+87
+00:04:49,740 --> 00:04:54,090
+writing code. And code isn't yet
+built into the system in the
+
+88
+00:04:54,090 --> 00:04:58,110
+same way. So it's not measured
+or incentivized. And ultimately,
+
+89
+00:04:58,110 --> 00:05:01,020
+if you're writing code, you're
+probably not writing papers, and
+
+90
+00:05:01,020 --> 00:05:04,320
+you may not be earning the types
+of research that might advance
+
+91
+00:05:04,320 --> 00:05:07,290
+your career prospects,
+unfortunately.
+
+92
+00:05:08,310 --> 00:05:11,880
+And so while code produces
+scientific outputs, it also
+
+93
+00:05:11,880 --> 00:05:14,010
+doesn't mean that people
+actually appreciate good
+
+94
+00:05:14,010 --> 00:05:19,440
+practice. So I know as a
+research software engineer, I
+
+95
+00:05:19,470 --> 00:05:22,230
+would appreciate it if I came
+back to my own code, and I'd
+
+96
+00:05:22,230 --> 00:05:25,410
+done good documentation or you
+know, written tests or done
+
+97
+00:05:25,410 --> 00:05:28,230
+whatever other good bit of
+practice I should be doing. And
+
+98
+00:05:28,230 --> 00:05:30,300
+I know that any other
+maintainers, who maybe stepped
+
+99
+00:05:30,300 --> 00:05:33,960
+up after me would also
+appreciate that, but I'm not
+
+100
+00:05:33,960 --> 00:05:37,260
+sure if anyone else would. Right
+now, unfortunately, this is
+
+101
+00:05:37,260 --> 00:05:40,500
+another thing that we really
+don't incentivize, which kind of
+
+102
+00:05:40,500 --> 00:05:43,170
+actually nicely moves on to my
+next point.
+
+103
+00:05:44,770 --> 00:05:49,150
+So another problem with code
+related outputs is that they
+
+104
+00:05:49,150 --> 00:05:52,240
+might not be shared. And this
+could be because there wasn't
+
+105
+00:05:52,240 --> 00:05:56,140
+good practice, like I mentioned
+earlier, or it could be related
+
+106
+00:05:56,170 --> 00:06:01,570
+to other reasons. For example,
+people may want to capitalise on
+
+107
+00:06:01,750 --> 00:06:06,160
+intellectual property or
+something else. And, and perhaps
+
+108
+00:06:06,160 --> 00:06:08,950
+another interesting area is that
+researchers may not always wish
+
+109
+00:06:08,950 --> 00:06:13,510
+to share, that they actually are
+writing code. So this could be a
+
+110
+00:06:13,510 --> 00:06:17,290
+recall when I was at fosdem last
+year, someone said that it was
+
+111
+00:06:17,290 --> 00:06:20,950
+incredibly hard to actually get
+a grant to get someone to pay
+
+112
+00:06:20,950 --> 00:06:22,450
+you to write software.
+
+113
+00:06:25,240 --> 00:06:27,970
+And one of the consequences of
+that is that you might not write
+
+114
+00:06:27,970 --> 00:06:30,610
+in your grant application that
+you're even writing code,
+
+115
+00:06:30,640 --> 00:06:32,830
+because you may feel like you
+need to obscure it just in order
+
+116
+00:06:32,830 --> 00:06:35,800
+to get funded. But we believe
+that you should be able to say
+
+117
+00:06:35,800 --> 00:06:38,620
+that you want to write code,
+because this is how this type of
+
+118
+00:06:38,620 --> 00:06:42,280
+work is done. And I'm going to
+do this code well. So another
+
+119
+00:06:42,280 --> 00:06:45,100
+interesting thing is that some
+people also don't even realise
+
+120
+00:06:45,100 --> 00:06:47,890
+that they're coders. I recall
+having a chat one day with
+
+121
+00:06:47,890 --> 00:06:50,470
+someone and I explained that I
+was a research software
+
+122
+00:06:50,470 --> 00:06:54,010
+engineer. And she said that that
+was kind of interesting. But
+
+123
+00:06:54,010 --> 00:06:57,460
+also not something she had any
+knowledge about. And then later
+
+124
+00:06:57,460 --> 00:07:00,010
+in that same conversation, she
+mentioned that she actually uses
+
+125
+00:07:00,010 --> 00:07:03,190
+our every single day. So I'm
+like, well, this is this is
+
+126
+00:07:03,190 --> 00:07:06,670
+code, and it's an important part
+of science, you are a coder. But
+
+127
+00:07:06,670 --> 00:07:08,950
+of course, if she doesn't think
+that she's doing code, then
+
+128
+00:07:08,950 --> 00:07:10,870
+she's probably not going to be
+mentioning this in her grant
+
+129
+00:07:10,870 --> 00:07:14,380
+applications. And as a funder,
+we don't necessarily get a
+
+130
+00:07:14,380 --> 00:07:17,230
+realistic picture of what's
+going on if people aren't
+
+131
+00:07:17,230 --> 00:07:20,800
+actually feeling like they can
+talk about code at all, as part
+
+132
+00:07:20,800 --> 00:07:23,980
+of science. So we really want
+people to be able to open up and
+
+133
+00:07:23,980 --> 00:07:27,340
+share and tell us what they're
+doing around code, so that we
+
+134
+00:07:27,340 --> 00:07:30,430
+can incentivize and reward it
+and understand it a bit better.
+
+135
+00:07:33,630 --> 00:07:36,660
+Another problem in the talent
+area is that we are in an
+
+136
+00:07:36,720 --> 00:07:39,480
+intersection of places where
+diversity tends to be really
+
+137
+00:07:39,480 --> 00:07:44,580
+bad. GitHub survey in 2017 found
+that over 90% of open source
+
+138
+00:07:44,580 --> 00:07:48,330
+contributors were men. And a
+recent report from the software
+
+139
+00:07:48,330 --> 00:07:52,200
+Sustainability Institute in the
+UK similarly found that 6% of UK
+
+140
+00:07:52,200 --> 00:07:55,470
+research software engineers
+reported as disabled, and 5%
+
+141
+00:07:55,470 --> 00:07:58,680
+reported as black or minority
+ethnicity were at the
+
+142
+00:07:58,680 --> 00:08:02,580
+intersection of so many of these
+different places, which means
+
+143
+00:08:02,580 --> 00:08:04,800
+that we're probably not getting
+the best quality outputs that we
+
+144
+00:08:04,800 --> 00:08:08,340
+could get, since we only have a
+real small subset of people that
+
+145
+00:08:08,340 --> 00:08:10,770
+there actually are available
+working on this and putting
+
+146
+00:08:10,770 --> 00:08:12,420
+their views into what's going
+on.
+
+147
+00:08:55,280 --> 00:08:58,730
+I will also talk a little bit
+about the Wellcome Trust
+
+148
+00:08:58,760 --> 00:09:01,910
+strategy. So sort of previously,
+I've been talking about some of
+
+149
+00:09:01,910 --> 00:09:04,460
+the problems in the domain and
+some of the things that I think
+
+150
+00:09:04,460 --> 00:09:07,970
+my team are really interested in
+doing. But the Wellcome Trust is
+
+151
+00:09:07,970 --> 00:09:12,140
+a science funder largely. And
+right now we've sort of shifted
+
+152
+00:09:12,140 --> 00:09:15,140
+our focus to look at really
+three primary areas as well as
+
+153
+00:09:15,470 --> 00:09:18,620
+discovery research, which is a
+bit broader, but we have a
+
+154
+00:09:18,620 --> 00:09:22,610
+really strong focus on global
+heating on mental health and on
+
+155
+00:09:22,640 --> 00:09:24,050
+infectious disease.
+
+156
+00:09:27,650 --> 00:09:30,830
+And I will also give you some
+examples, I've got a couple of
+
+157
+00:09:30,830 --> 00:09:34,490
+open source software projects
+that we've actually just funded
+
+158
+00:09:34,490 --> 00:09:37,430
+really recently both of these
+have been co funded with other
+
+159
+00:09:37,430 --> 00:09:41,990
+funding organisations or in this
+case, afrimapr was co funded
+
+160
+00:09:41,990 --> 00:09:46,940
+with Wellcome's Open Research
+team. And it is a Shiny/R-based
+
+161
+00:09:46,970 --> 00:09:50,750
+tool that actually allows you to
+look up healthcare facility
+
+162
+00:09:50,750 --> 00:09:54,290
+locations in Africa is
+integrated data both I think
+
+163
+00:09:54,290 --> 00:09:56,810
+from citizen science data as
+well as governmental data
+
+164
+00:09:56,810 --> 00:09:57,500
+sources
+
+165
+00:09:59,870 --> 00:10:04,220
+Another open source project that
+we've recently co funded is
+
+166
+00:10:04,250 --> 00:10:08,750
+OpenSAFELY, which allows people
+to allows
+
+167
+00:11:07,070 --> 00:11:11,000
+that you can find maintenance
+money for, for example, and that
+
+168
+00:11:11,030 --> 00:11:14,270
+you feel like you're justified
+doing documentation for users
+
+169
+00:11:14,270 --> 00:11:17,600
+and software developers who want
+their code to be accessible, we
+
+170
+00:11:17,600 --> 00:11:21,500
+want to make sure that... whilst
+FAIR, FAIR is great, and this
+
+171
+00:11:21,500 --> 00:11:23,870
+time I'm also talking about
+things like making sure that
+
+172
+00:11:24,140 --> 00:11:27,350
+your code works with screen
+readers, if that's relevant, or
+
+173
+00:11:27,350 --> 00:11:31,820
+that there is captioning, for
+example, if there is audio
+
+174
+00:11:31,820 --> 00:11:37,280
+content, and a huge, huge part
+of open source. Success is
+
+175
+00:11:37,280 --> 00:11:41,930
+community. And, as I mentioned,
+many of the people here and we
+
+176
+00:11:41,930 --> 00:11:44,510
+are an open source software
+conference, people are aware
+
+177
+00:11:44,510 --> 00:11:47,420
+that very often putting your
+code online isn't enough to make
+
+178
+00:11:47,420 --> 00:11:50,750
+people contribute. But actually,
+you may want community managers
+
+179
+00:11:50,750 --> 00:11:54,710
+and people who spend a lot of
+time thinking and working with
+
+180
+00:11:54,710 --> 00:11:57,620
+people to actually bring in
+contributions. And this is an
+
+181
+00:11:57,620 --> 00:12:00,590
+important part of measuring the
+sustainability of software as
+
+182
+00:12:00,590 --> 00:12:00,980
+well.
+
+183
+00:12:29,670 --> 00:12:35,520
+here's a couple of calls to
+arms. And so if you, if this has
+
+184
+00:12:35,520 --> 00:12:38,280
+sort of spoken to you, and you
+have some examples of things
+
+185
+00:12:38,280 --> 00:12:39,480
+that you would like to share,
+
+186
+00:12:40,770 --> 00:12:43,410
+please, please contact me my
+email address is on the next
+
+187
+00:12:43,410 --> 00:12:46,920
+page, we are launching at the
+minute a blog to spotlight good
+
+188
+00:12:46,920 --> 00:12:49,260
+practice in open source research
+software.
+
+189
+00:13:23,440 --> 00:13:27,190
+is that we want to be funding
+software tools. So if you think
+
+190
+00:13:27,190 --> 00:13:30,160
+you fit into life science
+domains, either as a really
+
+191
+00:13:30,160 --> 00:13:34,900
+foundational software tool, or
+one of the three specific areas
+
+192
+00:13:34,900 --> 00:13:37,510
+that I mentioned, that Wellcome
+is focusing on - mental health
+
+193
+00:13:37,540 --> 00:13:41,710
+and infectious diseases and
+global heating, then please,
+
+194
+00:13:41,740 --> 00:13:45,250
+please do contact me. So my
+email address is here. And
+
+195
+00:13:45,250 --> 00:13:47,710
+there's also the whole team's
+email address if you prefer
+
+196
+00:13:47,710 --> 00:13:48,040
+that.
+
+197
+00:13:49,200 --> 00:13:52,140
+But I'm also happy to sound off
+ideas and just discuss things if
+
+198
+00:13:52,140 --> 00:13:54,030
+you think that there's something
+that you're not sure what might
+
+199
+00:13:54,030 --> 00:13:56,610
+be a good fit, or if you need to
+talk through a bit more before
+
+200
+00:13:56,610 --> 00:14:00,660
+spending time and effort
+thinking about it. And with
+
+201
+00:14:00,660 --> 00:14:03,330
+that, I'll say thank you very
+much and happy to take any
+
+202
+00:14:03,330 --> 00:14:04,590
+questions. Thank you
+
